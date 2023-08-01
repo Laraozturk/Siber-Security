@@ -1,4 +1,6 @@
- **1. Shell Script Dosyası Oluşturma**
+# SHELL SCRİPT SERVİS OLARAK AYARLAMA
+
+## **1. Shell Script Dosyası Oluşturma**
 
 Her saat başı yedek alan Shell script oluşturduk. Oluşturduğumuz script yedekleme alınan saati dosyanın ismi yapar. 
 
@@ -28,7 +30,7 @@ while true; do
 done
 ```
 
-# **2. Oluşturduğumuz Scriptte Bulunan Gereksiz Kodları Çıkarma (While Döngüsü)**
+## **2. Oluşturduğumuz Scriptte Bulunan Gereksiz Kodları Çıkarma (While Döngüsü)**
 
 ```
 #!/bin/bash
@@ -54,13 +56,13 @@ backup_files(){
     fi
 ```
 
-# **3. Servis Dosyası Oluşturma**
+## **3. Servis Dosyası Oluşturma**
 
 ```
 sudo nano /lib/systemd/system/yedekleme3.service 
 ```
 
-# **4. Servis Dosyasının İçine Yazılan Kodlar**
+## **4. Servis Dosyasının İçine Yazılan Kodlar**
 
 ```
 [Unit]
@@ -73,25 +75,25 @@ ExecStart=/home/kali/odevy/yedekleme.sh
 WantedBy=multi-user.target
 ```
 
-# **5. Systemctl Servis Dosyalarını Yapılandırma**
+## **5. Systemctl Servis Dosyalarını Yapılandırma**
 
 ```
 sudo systemctl daemon-reload 
 ```
 
-# **6.Oluşturduğumuz Servisin Otomatik Olarak Çalışması**
+## **6.Oluşturduğumuz Servisin Otomatik Olarak Çalışması**
 
 ```
 sudo systemctl enable yedekleme3.service 
 ```
 
-# **7.Servisin Başlatılması**
+## **7.Servisin Başlatılması**
 
 ```
 sudo systemctl start yedekleme3.service 
 ```
 
-# **8.Servisin Durumunu ve Çalışma Bilgilerini Görüntüleme**
+## **8.Servisin Durumunu ve Çalışma Bilgilerini Görüntüleme**
 
 ```
 sudo systemctl status yedekleme3.service 
