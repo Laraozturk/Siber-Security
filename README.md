@@ -1,4 +1,4 @@
-# SHELL SCRİPT SERVİS OLARAK AYARLAMA
+# ***SHELL SCRİPT SERVİS OLARAK AYARLAMA***
 
 ## **1. Shell Script Dosyası Oluşturma**
 
